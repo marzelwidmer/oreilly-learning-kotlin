@@ -31,6 +31,10 @@ public class CustomerJava {
         this.email = email;
     }
 
+    public CustomerJava() {
+
+    }
+
     public CustomerJava(int id, String name, String email) {
         this.id = id;
         this.name = name;
