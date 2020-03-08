@@ -8,25 +8,13 @@ interface Repository {
 }
 
 
-interface Service {
-    fun callService(): String
-}
-
-
-class ServiceImpl : Service {
-    override fun callService(): String {
-        TODO("Not yet implemented")
-    }
-
-}
 
 
 // Delegation Member Functions
-class Controller(repository: Repository, service: Service) : Repository by repository, Service by service{
+class Controller(repository: Repository, service: Service) : Repository by repository{
 
     fun index() {
         getAll()
         getById(id = 1)
-        callService()
     }
 }
