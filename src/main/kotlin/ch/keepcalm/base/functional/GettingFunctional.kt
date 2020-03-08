@@ -10,18 +10,19 @@ fun operator(x: Int, op: (Int) -> Unit) {}
 fun route(path: String, vararg actions: (String, String) -> String) {}
 
 fun unaryOperation(x: Int, op: (Int) -> Int) {}
-fun unaryOp(op: (Int) -> Int){}
+fun unaryOp(op: (Int) -> Int) {}
 fun sum(x: Int, y: Int) = x + y
 
-fun transaction (db: Database, code: () -> Unit){
+fun transaction(db: Database, code: () -> Unit) {
     try {
         code()
     } finally {
         db.commit()
     }
 }
+
 class Database {
-    fun commit(){}
+    fun commit() {}
 }
 
 fun main() {
@@ -48,8 +49,10 @@ fun main() {
     }
 
     val db = Database()
-    transaction(db){
+    transaction(db) {
         // Interact with database
     }
 
+    // Anonymous function
+    unaryOperation(3, fun(x: Int): Int { return x * x })
 }
