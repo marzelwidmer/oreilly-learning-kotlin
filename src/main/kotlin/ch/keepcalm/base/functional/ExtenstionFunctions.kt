@@ -19,5 +19,17 @@ fun main() {
 
     someUtility("this is a sample string to Title Case it.".toTitleCase())
 
+    val customer =  Customer()
+    customer.makePreferred("My new version")
 
+
+}
+
+class Customer(){
+    fun makePreferred(){
+        println("Customer version")
+    }
+}
+fun Customer.makePreferred(message : String){
+    println(message)
 }
