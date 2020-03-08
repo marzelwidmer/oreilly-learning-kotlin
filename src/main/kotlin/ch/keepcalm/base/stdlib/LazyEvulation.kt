@@ -19,5 +19,4 @@ fun main() {
 
     val lazyInit : Int by lazy { 10 }
 
-
 }
